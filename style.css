@@ -206,33 +206,58 @@ button:hover, .btn:hover {
 .dog-card {
   background-color: #111;
   border-radius: 15px;
-  padding: 1.5rem;
-  width: 280px;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.3);
   text-align: center;
-  box-shadow: 0 0 15px rgba(33, 150, 243, 0.2);
+  max-width: 300px;
   transition: transform 0.3s ease;
 }
 
 .dog-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(33, 150, 243, 0.4);
+  box-shadow: 0 0 25px rgba(33, 150, 243, 0.6);
 }
 
 .dog-card h2 {
-  color: #42a5f5;
+  color: #2196f3;
   margin: 1rem 0 0.5rem;
-  text-shadow: 0 0 5px #2196f3;
 }
 
 .dog-card p {
+  color: #cfd8dc;
   font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 1rem;
 }
 
-.dog-card .dog-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+/* Button matching donate style */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #2196f3, #1e88e5);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px #2196f3;
+  margin: 2rem auto;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #2196f3, 0 0 35px #2196f3;
+}
+
+/* Responsive for dog cards */
+@media (max-width: 768px) {
+  .dog-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dog-card {
+    width: 90%;
+    max-width: none;
+  }
 }
