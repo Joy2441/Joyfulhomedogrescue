@@ -49,11 +49,12 @@ p {
 /* === Dog Gallery Grid === */
 .dog-gallery {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center; /* centers the whole group horizontally */
+  gap: 2rem;               /* space between dog cards */
+  flex-wrap: nowrap;       /* prevent wrapping to next line */
   margin-bottom: 2rem;
 }
+
 
 /* === Dog Cards === */
 .dog-card {
