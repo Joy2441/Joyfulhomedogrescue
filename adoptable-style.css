@@ -57,7 +57,7 @@ p {
 .dog-image {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   box-shadow: 0 0 12px rgba(33, 150, 243, 0.3);
 }
 
