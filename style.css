@@ -1,40 +1,40 @@
-/* Reset and Base Styles */
+/* === Base Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* === Global Styles === */
 body {
-  background-color: #000;
-  font-family: 'Comic Neue', cursive, sans-serif;
-  color: blue;
+  background-color: #000; /* Black background */
+  color: #cfd8dc;         /* Light gray text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   padding: 2rem;
 }
 
-/* Headings */
+/* === Headings === */
 h1, h2, h3 {
-  color: #white;
+  color: #2196f3; /* Blue accent */
+  margin-bottom: 1rem;
   text-align: center;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+  text-shadow: 0 0 5px #2196f3;
 }
 
-/* Paragraphs */
+/* === Paragraphs & Lists === */
 p, li {
-  color: #e0e0e0;
   font-size: 1.1rem;
+  color: #e0e0e0;
   margin-bottom: 1rem;
 }
 
-/* Lists */
 ul {
   margin-left: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Dog Image Gallery */
+/* === Dog Image Gallery === */
 .dog-gallery {
   display: flex;
   justify-content: center;
@@ -45,36 +45,18 @@ ul {
 
 .dog-image {
   width: 280px;
-  height: auto;
   border-radius: 15px;
-  border: 3px solid #ff00cc;
-  box-shadow: 0 0 20px #ff00cc, 0 0 30px #00ffff;
+  border: 2px solid #37474f; /* Dark gray border */
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3); /* Blue glow */
   transition: transform 0.3s ease;
 }
 
 .dog-image:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.6);
 }
 
-/* Buttons and Links */
-a {
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.donate-button, #adoptButton {
-  display: inline-block;
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  color: red;
-  padding: 12px 24px;
-  margin: 1rem auto;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
-  text-align: center;
-}
-
+/* === Circular Donate Button === */
 .donate-button {
   display: inline-flex;
   align-items: center;
@@ -82,60 +64,76 @@ a {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  color: white;
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, #2196f3, #1e88e5);
+  color: #fff;
+  font-size: 1.4rem;
   font-weight: bold;
-  text-align: center;
-  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
-  transition: transform 0.2s ease-in-out;
   text-decoration: none;
-  margin: 1rem;
+  box-shadow: 0 0 15px #2196f3;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 1rem auto;
 }
 
 .donate-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 25px #ff66cc, 0 0 40px #6666ff;
+  box-shadow: 0 0 25px #2196f3, 0 0 40px #2196f3;
 }
 
+/* === Links === */
+a {
+  color: #64b5f6;
+  text-decoration: none;
 }
 
+a:hover {
+  color: #bbdefb;
+  text-shadow: 0 0 5px #2196f3;
+}
+
+/* === Events Section Box === */
+#events {
+  background-color: #111;
+  border-radius: 15px;
+  padding: 1.5rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.2);
+}
+
+#events h2, #events h3 {
+  color: #42a5f5;
+  text-shadow: 0 0 5px #42a5f5;
+}
+
+/* === Contact & Buttons === */
 .contact-link {
-  display: inline-block;
-  color: #00ffcc;
+  color: #64b5f6;
   font-weight: bold;
-  margin-left: 1rem;
-  font-size: 1rem;
 }
 
 .contact-link:hover {
-  color: #66ffe6;
-  text-shadow: 0 0 10px #00ffcc;
+  color: #bbdefb;
+  text-shadow: 0 0 8px #2196f3;
 }
 
-/* Event Box */
-#events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+button, .btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #2196f3;
+  transition: transform 0.2s ease-in-out;
 }
 
-#events div {
-  background-color: #1a1a1a;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-  max-width: 500px;
-  margin: 2rem auto;
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #2196f3;
 }
 
-#events h3 {
-  color: #ffd700;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Responsive */
+/* === Responsive Design === */
 @media (max-width: 768px) {
   .dog-gallery {
     flex-direction: column;
@@ -146,57 +144,8 @@ a {
     width: 90%;
   }
 
-  #events div {
+  #events {
     width: 90%;
   }
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 15px #00ffe7;
-}
-
-.contact-form label {
-  font-weight: bold;
-  color: #00ffcc;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  background-color: #111;
-  color: #fff;
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 15px #00ffe7;
-}
-
-.contact-form .btn {
-  background: linear-gradient(45deg, #00ffcc, #0066ff);
-  border: none;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #0066ff;
-  transition: transform 0.2s ease-in-out;
-}
-
-.contact-form .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00ffcc, 0 0 40px #0066ff;
 }
 
