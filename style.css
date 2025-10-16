@@ -149,3 +149,44 @@ button:hover, .btn:hover {
   }
 }
 
+.dog-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.dog-card {
+  background-color: #111;
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.dog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(33, 150, 243, 0.4);
+}
+
+.dog-card h2 {
+  color: #42a5f5;
+  margin: 1rem 0 0.5rem;
+  text-shadow: 0 0 5px #2196f3;
+}
+
+.dog-card p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.dog-card .dog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+}
