@@ -194,4 +194,8 @@ ul li {
     width: 80%;
   }
 }
-
+#map {
+    height: 500px; /* Set a specific height for the map */
+    width: 100%;
+    margin-top: 20px;
+}
