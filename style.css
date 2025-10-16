@@ -1,104 +1,78 @@
-/* === Base Reset === */
+/* === Reset & Base === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === Global Styles === */
 body {
-  background-color: #000; /* Black background */
-  color: #cfd8dc;         /* Light gray text */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #cfd8dc;
+  font-family: 'Comic Neue', cursive, sans-serif;
   line-height: 1.6;
   padding: 2rem;
 }
 
+/* === Layout === */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* === Headings === */
 h1, h2, h3 {
-  color: #2196f3; /* Blue accent */
+  color: #2196f3;
+  text-shadow: 0 0 8px #2196f3;
   margin-bottom: 1rem;
-  text-align: center;
-  text-shadow: 0 0 5px #2196f3;
 }
 
-/* === Paragraphs & Lists === */
-p, li {
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* === Paragraphs === */
+p {
   font-size: 1.1rem;
   color: #e0e0e0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-ul {
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* === Dog Image Gallery === */
+/* === Dog Gallery === */
 .dog-gallery {
   display: flex;
   justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 2rem 0;
+  margin-bottom: 3rem;
 }
 
 .dog-image {
-  width: 280px;
-  border-radius: 15px;
-  border: 2px solid #37474f; /* Dark gray border */
-  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3); /* Blue glow */
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(33, 150, 243, 0.3);
   transition: transform 0.3s ease;
 }
 
 .dog-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(33, 150, 243, 0.6);
-}
-/* === Circular Donate Button === */
-.donate-button, .contact-button {
-  display: flex;                /* Use flexbox */
-  align-items: center;          /* Vertically center */
-  justify-content: center;      /* Horizontally center */
-  color: white;
-  background: linear-gradient(135deg, #2196f3, #1e88e5);
-  box-shadow: 0 0 15px #2196f3;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
+  transform: scale(1.03);
 }
 
-/* Donate button: circle */
-.donate-button {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;   /* Perfect circle */
-  font-size: 1rem;
-  padding: 0;           /* Remove padding for perfect centering */
-  margin: 1rem;
-}
-
-.donate-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #2196f3, 0 0 40px #2196f3;
-}
-
-/* Contact button: pill shape for longer text */
-.contact-button {
-  width: 130px;          /* wider for text */
-  height: 70px;
-  border-radius: 50px;   /* pill shape */
-  font-size: 1.1rem;
-  padding: 0;            /* Remove padding for centering */
-  margin: 1rem;
-}
-
-.contact-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #2196f3, 0 0 40px #2196f3;
-}
-
+/* === Donation Intro Text === */
 .donation-intro {
   text-align: center;
   margin: 2rem auto 1rem;
@@ -107,7 +81,6 @@ ul {
 
 .donation-intro h3 {
   color: #2196f3;
-  text-shadow: 0 0 8px #2196f3;
   margin-bottom: 0.5rem;
 }
 
@@ -116,110 +89,89 @@ ul {
   color: #cfd8dc;
 }
 
-
-/* === Links === */
-a {
-  color: #64b5f6;
-  text-decoration: none;
+/* === Donation List === */
+ul {
+  list-style-type: disc;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  padding-left: 1.5rem;
+  color: #e0e0e0;
 }
 
-a:hover {
-  color: #bbdefb;
-  text-shadow: 0 0 5px #2196f3;
-}
-
-/* === Events Section Box === */
-#events {
-  background-color: #111;
-  border-radius: 15px;
-  padding: 1.5rem;
-  max-width: 500px;
-  margin: 2rem auto;
-  box-shadow: 0 0 20px rgba(33, 150, 243, 0.2);
-}
-
-#events h2, #events h3 {
-  color: #42a5f5;
-  text-shadow: 0 0 5px #42a5f5;
-}
-
-/* === Contact & Buttons === */
-.contact-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;      /* wider to fit text */
-  height: 70px;
-  border-radius: 50px;  /* pill shape looks better with longer text */
-  background: linear-gradient(135deg, #2196f3, #1e88e5);
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 15px #2196f3;
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin: 1rem;
-  padding: 0 1.5rem;
-  white-space: nowrap;
-}
-
-.contact-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #2196f3, 0 0 40px #2196f3;
-}
-
-.contact-link {
-  color: #64b5f6;
-  font-weight: bold;
-}
-
-.contact-link:hover {
-  color: #bbdefb;
-  text-shadow: 0 0 8px #2196f3;
-}
-
-button, .btn {
-  background-color: #2196f3;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 30px;
+ul li {
+  margin-bottom: 0.5rem;
   font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 0 10px #2196f3;
-  transition: transform 0.2s ease-in-out;
 }
 
-button:hover, .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #2196f3;
-}
-#Happytails adoptiontButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  height: 160px;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.2;
+/* === Circle Buttons === */
+.donate-button, .contact-button {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #2196f3, #1e88e5);
   color: white;
   font-weight: bold;
-  border-radius: 12px;
+  text-align: center;
+  line-height: 150px;
   text-decoration: none;
+  margin: 1rem;
   box-shadow: 0 0 15px #2196f3;
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin: 2rem auto;
+  transition: all 0.3s ease-in-out;
 }
 
-#adoptButton:hover {
+.donate-button:hover, .contact-button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #2196f3, 0 0 35px #2196f3;
 }
 
-/* === Responsive Design === */
+/* === Adopt Button (Square) === */
+#adoptButton {
+  display: inline-block;
+  background-color: #2196f3;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2196f3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#adoptButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #2196f3;
+}
+
+/* === Events Section === */
+#events {
+  background-color: #111;
+  padding: 2rem;
+  margin: 3rem auto;
+  border-radius: 15px;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+}
+
+#events h2 {
+  color: #ffcc00;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 6px #ffcc00;
+}
+
+#events h3 {
+  color: #ffdd57;
+  margin-bottom: 0.5rem;
+}
+
+#events p {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+/* === Responsive (Basic) === */
 @media (max-width: 768px) {
   .dog-gallery {
     flex-direction: column;
@@ -228,76 +180,18 @@ button:hover, .btn:hover {
 
   .dog-image {
     width: 90%;
+    height: auto;
   }
 
-  #events {
-    width: 90%;
+  .donate-button, .contact-button {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 0.9rem;
+  }
+
+  #adoptButton {
+    width: 80%;
   }
 }
 
-.dog-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.dog-card {
-  background-color: #111;
-  border-radius: 15px;
-  padding: 1rem;
-  box-shadow: 0 0 15px rgba(33, 150, 243, 0.3);
-  text-align: center;
-  max-width: 300px;
-  transition: transform 0.3s ease;
-}
-
-.dog-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(33, 150, 243, 0.6);
-}
-
-.dog-card h2 {
-  color: #2196f3;
-  margin: 1rem 0 0.5rem;
-}
-
-.dog-card p {
-  color: #cfd8dc;
-  font-size: 1rem;
-}
-
-/* Button matching donate style */
-.btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #2196f3, #1e88e5);
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 15px #2196f3;
-  margin: 2rem auto;
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #2196f3, 0 0 35px #2196f3;
-}
-
-/* Responsive for dog cards */
-@media (max-width: 768px) {
-  .dog-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dog-card {
-    width: 90%;
-    max-width: none;
-  }
-}
