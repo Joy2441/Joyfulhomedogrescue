@@ -57,24 +57,45 @@ ul {
 }
 
 /* === Circular Donate Button === */
+.donate-button, .contact-button {
+  display: flex;                /* Use flexbox */
+  align-items: center;          /* Vertically center */
+  justify-content: center;      /* Horizontally center */
+  color: white;
+  background: linear-gradient(135deg, #2196f3, #1e88e5);
+  box-shadow: 0 0 15px #2196f3;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Donate button: circle */
 .donate-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2196f3, #1e88e5);
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 15px #2196f3;
-  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin: 1rem auto;
+  border-radius: 50%;   /* Perfect circle */
+  font-size: 1rem;
+  padding: 0;           /* Remove padding for perfect centering */
+  margin: 1rem;
 }
 
 .donate-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #2196f3, 0 0 40px #2196f3;
+}
+
+/* Contact button: pill shape for longer text */
+.contact-button {
+  width: 130px;          /* wider for text */
+  height: 70px;
+  border-radius: 50px;   /* pill shape */
+  font-size: 1.1rem;
+  padding: 0;            /* Remove padding for centering */
+  margin: 1rem;
+}
+
+.contact-button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px #2196f3, 0 0 40px #2196f3;
 }
