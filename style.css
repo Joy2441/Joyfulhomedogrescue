@@ -75,10 +75,29 @@ a {
   text-align: center;
 }
 
-.donate-button:hover, #adoptButton:hover {
-  background: linear-gradient(45deg, #ff66cc, #6666ff);
+.donate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+  margin: 1rem;
+}
+
+.donate-button:hover {
+  transform: scale(1.1);
   box-shadow: 0 0 25px #ff66cc, 0 0 40px #6666ff;
-  transform: scale(1.05);
+}
+
 }
 
 .contact-link {
