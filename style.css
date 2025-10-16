@@ -1,119 +1,134 @@
-/*style.css*/
-
-/* Base Reset */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body Styling */
 body {
   background-color: #000;
-  color: #fff;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: #f2f2f2;
   line-height: 1.6;
   padding: 2rem;
 }
 
 /* Headings */
-h1, h2, h3, h4 {
+h1, h2, h3 {
   color: #00ffe7;
-  text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+  text-align: center;
   margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
 }
 
 /* Paragraphs */
-p {
-  color: #ccc;
+p, li {
+  color: #e0e0e0;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
 }
 
-/* Links */
-a {
-  color: #ff33cc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #ff99ff;
-  text-shadow: 0 0 5px #ff99ff;
+/* Lists */
+ul {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Buttons */
-button, .btn {
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  border: none;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
-  transition: transform 0.2s ease-in-out;
-}
-button:hover, .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff00cc, 0 0 40px #3333ff;
-}
-
-/* Containers */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,255,255,0.2);
-}
-
-/* Navbar */
-nav {
+/* Dog Image Gallery */
+.dog-gallery {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 2rem 0;
 }
-nav a {
-  margin: 0 1rem;
+
+.dog-image {
+  width: 280px;
+  height: auto;
+  border-radius: 15px;
+  border: 3px solid #ff00cc;
+  box-shadow: 0 0 20px #ff00cc, 0 0 30px #00ffff;
+  transition: transform 0.3s ease;
+}
+
+.dog-image:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons and Links */
+a {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.donate-button, #adoptButton {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: #fff;
+  padding: 12px 24px;
+  margin: 1rem auto;
+  border-radius: 30px;
+  font-size: 1.1rem;
   font-weight: bold;
-}
-
-/* Section Styling */
-section {
-  margin-bottom: 2rem;
-}
-
-/* Colorful Accent Boxes */
-.box {
-  background: linear-gradient(135deg, #ff6ec4, #7873f5);
-  padding: 2rem;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 0 15px #ff6ec4, 0 0 30px #7873f5;
-  margin-bottom: 2rem;
-}
-
-/* Footer */
-footer {
+  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  color: #888;
-  font-size: 0.9rem;
 }
 
-/* Animations */
-@keyframes glow {
-  0% { box-shadow: 0 0 5px #00ffe7; }
-  50% { box-shadow: 0 0 20px #00ffe7; }
-  100% { box-shadow: 0 0 5px #00ffe7; }
+.donate-button:hover, #adoptButton:hover {
+  background: linear-gradient(45deg, #ff66cc, #6666ff);
+  box-shadow: 0 0 25px #ff66cc, 0 0 40px #6666ff;
+  transform: scale(1.05);
 }
 
-.glow {
-  animation: glow 2s infinite;
+.contact-link {
+  display: inline-block;
+  color: #00ffcc;
+  font-weight: bold;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.contact-link:hover {
+  color: #66ffe6;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Event Box */
+#events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#events div {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+#events h3 {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dog-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dog-image {
+    width: 90%;
+  }
+
+  #events div {
+    width: 90%;
+  }
 }
 
