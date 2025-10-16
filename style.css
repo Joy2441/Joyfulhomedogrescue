@@ -1,497 +1,119 @@
 /*style.css*/
 
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
 body {
-  font-family: candara, sans-serf;
-  background-color: black;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
-h1{
-  color:# 333;
-  text-align: center;
+/* Headings */
+h1, h2, h3, h4 {
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+  margin-bottom: 1rem;
 }
 
+/* Paragraphs */
 p {
-  line-height:1.5;
-  margin-bottom:1em
-}
-}
-</style><style>.cs-icon {
-    display: inline-block;
-    position: relative;
-    width: calc(1.6 * var(--grid-unit));
-    height: calc(1.6 * var(--grid-unit));
-    /* prevent flex layout to affect the sice of the icons */
-    flex-shrink: 0;
-    flex-grow: 0;
-    fill: var(--vscode-editor-foreground, #444d56);
-}
+  color: #ccc;
+  margin-bottom: 1rem;
 }
 
-.cs-icon > svg,
-.cs-icon::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+/* Links */
+a {
+  color: #ff33cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #ff99ff;
+  text-shadow: 0 0 5px #ff99ff;
 }
 
-.cs-icon::after {
-    content: '';
-    z-index: 2;
+/* Buttons */
+button, .btn {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
+  transition: transform 0.2s ease-in-out;
+}
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00cc, 0 0 40px #3333ff;
 }
 
-.cs-icon svg,
-.cs-icon use {
-    fill: inherit;
-    z-index: 1;
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
 }
 
-.cs-icon--blue {
-    fill: var(--vscode-debugIcon-continueForeground, #0366d6);
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
-.cs-icon--green {
-    fill: var(--vscode-debugIcon-startForeground, #28a745);
-}
-.cs-icon--red {
-    fill: var(--vscode-errorForeground, #cb2431);
-}
-.cs-icon--black {
-    fill: var(--vscode-editor-foreground, #444d56);
-}
-
-  position: absolute;
-    opacity: 0;
-    left: -9999em;
-    top: 0;
-    width: 0;
-    height: 0;
-    z-index: -5;
-    /** Prevent wrapping so the IME appears against the textarea at the correct position */
-    white-space: nowrap;
-    overflow: hidden;
-    resize: none;
+nav a {
+  margin: 0 1rem;
+  font-weight: bold;
 }
 
-.cs-splash-screen .xterm .composition-view {
-    background: #000;
-    color: #FFF;
-    display: none;
-    position: absolute;
-    white-space: nowrap;
-    z-index: 1;
+/* Section Styling */
+section {
+  margin-bottom: 2rem;
 }
 
-.cs-splash-screen .xterm .composition-view.active {
-    display: block;
+/* Colorful Accent Boxes */
+.box {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 0 15px #ff6ec4, 0 0 30px #7873f5;
+  margin-bottom: 2rem;
 }
 
-.cs-splash-screen .xterm .xterm-viewport {
-    /* On OS X this is required in order for the scroll bar to appear fully opaque */
-    background-color: #000;
-    overflow-y: auto;
-    cursor: default;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #888;
+  font-size: 0.9rem;
 }
 
-.cs-splash-screen .xterm .xterm-screen {
-    position: relative;
+/* Animations */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #00ffe7; }
+  50% { box-shadow: 0 0 20px #00ffe7; }
+  100% { box-shadow: 0 0 5px #00ffe7; }
 }
 
-.cs-splash-screen .xterm .xterm-screen canvas {
-    position: absolute;
-    left: 0;
-    top: 0;
+.glow {
+  animation: glow 2s infinite;
 }
 
-.cs-splash-screen .xterm .xterm-scroll-area {
-    visibility: hidden;
-}
-
-.cs-splash-screen .xterm-char-measure-element {
-    display: inline-block;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: -9999em;
-    line-height: 17.5px;
-}
-
-.cs-splash-screen .xterm.enable-mouse-events {
-    /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
-    cursor: default;
-}
-
-.cs-splash-screen .xterm.xterm-cursor-pointer {
-    cursor: pointer;
-}
-
-.cs-splash-screen .xterm.column-select.focus {
-    /* Column selection mode */
-    cursor: crosshair;
-}
-
-.cs-splash-screen .xterm .xterm-accessibility,
-.cs-splash-screen .xterm .xterm-message {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    color: transparent;
-}
-
-.cs-splash-screen .xterm .live-region {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-.cs-splash-screen .xterm-dim {
-    opacity: 0.5;
-}
-
-.cs-splash-screen .xterm-underline {
-    text-decoration: underline;
-}</style><style>.jupyter-workbench {
-	height: 100%;
-	width: 100%;
-}
-</style><style>.cs-workbench-root {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 0;
-}
-
-.cs-workbench-page__dev-panel {
-	display: none;
-}
-
-.cs-workbench-page__body {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	transition: top 0.15s ease-in-out;
-}
-
-.cs-workbench-page.is-dev-panel .cs-workbench-page__dev-panel {
-	display: block;
-}
-
-.cs-workbench-page.is-dev-panel .cs-workbench-page__body {
-	top: var(--dev-panel-height);
-}
-
-.cs-workbench-page .Header {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 1;
-}
-
-.cs-workbench-page.is-dev-panel .Header {
-	top: var(--dev-panel-height);
-}
-</style><style>.cs-dev-panel-header-perf-block__controls {
-    float: left;
-    display: none;
-    margin-left: calc(.5 * var(--grid-unit));
-}
-
-.cs-dev-panel-header-perf-block__controls .cs-dev-panel-header-perf-block__console-button {
-    padding: calc(.4 * var(--grid-unit));
-    padding-bottom: calc(.2 * var(--grid-unit));
-    height: auto;
-    vertical-align: middle;
-}
-
-.cs-dev-panel-header-perf-block.is-ready {
-    cursor: pointer;
-}
-
-.cs-dev-panel-header-perf-block.is-ready:hover .cs-dev-panel-header-perf-block__controls {
-    display: block;
-}
-</style><style>.cs-dev-panel-header {
-    padding-right: calc(var(--dev-panel-height) + var(--grid-unit));
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    z-index: 0;
-}
-
-.cs-dev-panel-header__section {
-    position: relative;
-    height: var(--dev-panel-height);
-    line-height: var(--dev-panel-height);
-    float: left;
-    overflow: hidden;
-}
-
-.cs-dev-panel-header__section--text {
-    padding-left: calc(1 * var(--grid-unit));
-}
-
-.cs-dev-panel-header__section--text + .cs-dev-panel-header__section--text {
-    padding-left: calc(.5 * var(--grid-unit));
-}
-
-.cs-dev-panel-header__section-title {
-    color: var(--dev-panel-text-color);
-    cursor: default;
-}
-
-.cs-dev-panel-header__section::selection {
-    background-color: var(--dev-panel-selection-color);
-}
-
-.cs-dev-panel-header__emoji {
-    display: inline-block;
-    border-right: 1px solid var(--dev-panel-border-color);
-    padding: 0 calc(.7 * var(--grid-unit));
-    height: 100%;
-    position: relative;
-}
-
-.cs-dev-panel-header__emoji.is-corner::after {
-    content: '';
-    position: absolute;
-    --gap: calc(.3 * var(--grid-unit));
-    --size: calc(.3 * var(--grid-unit));
-    top: var(--gap);
-    right: var(--gap);
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    background-color: #00E600;
-}
-</style><style>.cs-dev-panel-section {
-    margin-bottom: calc(1.5 * var(--grid-unit));
-}
-
-.cs-dev-panel-section + .cs-dev-panel-section {
-    padding-top: calc(1.5 * var(--grid-unit));
-    border-top: 1px solid var(--dev-panel-border-color);
-}
-
-.cs-dev-panel-section__title {
-    position: relative;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    padding-left: calc(1.25 * var(--grid-unit));
-}
-
-.cs-dev-panel-section__title::before {
-    content: '▶';
-    color: inherit;
-    font-size: 10px;
-    font-family: monospace;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: transform .075s ease-in-out;
-    transform-origin: 25% 60%;
-}
-
-.cs-dev-panel-section.is-open .cs-dev-panel-section__title::before {
-    transform: rotate(90deg);
-}
-
-.cs-dev-panel-section.is-open .cs-dev-panel-section__body {
-    display: block;
-}
-
-.cs-dev-panel-section__title:hover {
-    opacity: .85;
-}
-
-.cs-dev-panel-section__body {
-    display: none;
-    margin-top: calc(1 * var(--grid-unit));
-    padding: 0 calc(1.5 * var(--grid-unit));
-    border-left: 1px solid var(--dev-panel-border-color);
-    min-width: calc(20 * var(--grid-unit));
-    box-sizing: border-box;
-}
-
-.cs-dev-panel-section__body hr {
-    margin: calc(1 * var(--grid-unit)) 0;
-    border: none;
-    border-top: 1px solid var(--dev-panel-border-color);
-}
-
-.cs-dev-panel-section__body p,
-.cs-dev-panel-section__body pre {
-    margin: calc(.5 * var(--grid-unit)) 0;
-}
-
-.cs-dev-panel-section__body .cs-dev-panel-section__footer {
-    margin-top: calc(1.5 * var(--grid-unit));
-}
-
-/* clearfix */
-.cs-dev-panel-section__body p::after {
-    content: '';
-    clear: both;
-    display: table;
-}
-
-.cs-dev-panel-section__body label {
-    color: #e1e1e1;
-    float: left;
-    margin-top: calc(.3 * var(--grid-unit));
-    margin-right: calc(.5 * var(--grid-unit));
-}
-
-.cs-dev-panel-section__body input[type='checkbox'] {
-    float: left;
-    margin-left: 0;
-    margin-right: calc(1 * var(--grid-unit));
-}
-</style><style>:root {
-    --grid-unit: 1rem;
-    --button-bg-color: #0278d5;
-    --dev-panel-height: 2.5rem;
-    --dev-panel-text-color: hsla(0,0%,100%,.5);
-    --dev-panel-border-color: #2a2a2a;
-    --dev-panel-bg-emphasis: #000;
-    --dev-panel-bg-emphasis-hover: #111;
-    --dev-panel-selection-color: #00FFFF;
-    --dev-panel--linkselection-color: #00BEFF;
-}
-
-.cs-dev-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    box-sizing: border-box;
-    color: white;
-    font-family: Helvetica, Arial, sans-serif;
-    transition: height .1s ease-in-out;
-    letter-spacing: 0.5px;
-}
-
-.cs-dev-panel.is-hidden {
-    height: var(--dev-panel-height);
-    box-shadow: none;
-}
-
-.cs-dev-panel input:focus {
-    background-color: rgba(255, 255, 255, .1);;
-    outline: none;
-    border-color: white;
-    color: white;
-}
-
-.cs-dev-panel__input[type='text'] {
-    height: calc(1 * var(--grid-unit));
-    border-radius: 0;
-    border: 1px solid var(--dev-panel-border-color);
-    color: inherit;
-    background-color: rgba(255, 255, 255, .05);
-    font-size: 12px;
-    --input-height: calc(2.5 * var(--grid-unit));
-    height: var(--input-height);
-    line-height: var(--input-height);
-    padding: calc(.5 * var(--grid-unit));
-    box-sizing: border-box;
-    margin: calc(.5 * var(--grid-unit)) 0;
-    width: 100%;
-}
-
-.cs-dev-panel__input--button {
-    padding: calc(.5 * var(--grid-unit)) calc(1 * var(--grid-unit));
-    margin: 0 calc(.25 * var(--grid-unit));
-    --button-height: calc(2.5 * var(--grid-unit));
-    height: var(--button-height);
-    line-height: calc((var(--button-height) / 2) - 1px);
-    font-size: 12px;
-    cursor: pointer;
-    border: none;
-}
-
-.cs-dev-panel__input--button-margin {
-    margin-top: 5px;
-}
-
-.cs-dev-panel__input--button:disabled {
-    opacity: .2;
-    cursor: default;
-}
-
-.cs-dev-panel__toggle-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: var(--dev-panel-height);
-    width: var(--dev-panel-height);
-    background: var(--dev-panel-bg-emphasis);
-    font-size: 12px;
-    line-height: calc(var(--dev-panel-height) + 2px);
-    cursor: pointer;
-    text-align: center;
-    border-left: 1px solid var(--dev-panel-border-color);
-    box-sizing: content-box;
-    z-index: 1;
-}
-
-.cs-dev-panel__toggle-button:hover {
-    background-color: var(--dev-panel-bg-emphasis-hover);
-}
-
-.cs-dev-panel__header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--dev-panel-height);
-    line-height: calc(var(--dev-panel-height) - 1px);
-    font-size: 12px;
-    background: #161818;
-    box-shadow: 0 5px 0 rgba(0,0,0,.15);
-    z-index: 0;
-    border-bottom: 1px solid var(--dev-panel-border-color);
-}
-
-.cs-dev-panel__body {
-    position: absolute;
-    top: var(--dev-panel-height);
-    right: 0;
-    width: calc(20 * var(--grid-unit));
-    padding: calc(1.5 * var(--grid-unit));
-    padding-bottom: calc(.5 * var(--grid-unit));
-    overflow: hidden;
-    overflow-y: auto;
-    background: #161818;
-    box-shadow: 5px 5px 0 rgba(0,0,0,.15),
-                inset 0 1px 0 var(--dev-panel-border-color);
-    max-height: calc(40 * var(--grid-unit));
-    z-index: 0;
-}
-
-.cs-dev-panel.is-hidden .cs-dev-panel__body {
-    display: none;
-}
-
-.cs-dev-panel.is-hidden .cs-dev-panel__header {
-    box-shadow: none;
-
-.cs-icon--white {
-    fill: var(--vscode-editor-foreground, #444d56);
-}</style><style>/**
