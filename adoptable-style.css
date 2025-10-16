@@ -1,4 +1,4 @@
-/* === Reset & Base === */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -13,14 +13,13 @@ body {
   padding: 2rem;
 }
 
-/* === Layout Container === */
 main {
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* === Headings === */
+/* Headings */
 h1, h2 {
   color: #2196f3;
   text-shadow: 0 0 8px #2196f3;
@@ -36,7 +35,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* === Paragraphs === */
+/* Paragraphs */
 p {
   font-size: 1.1rem;
   color: #e0e0e0;
@@ -46,25 +45,25 @@ p {
   margin-right: auto;
 }
 
-/* === Dog Gallery Grid === */
+/* === Dog Gallery Container === */
 .dog-gallery {
   display: flex;
-  justify-content: center; /* centers the whole group horizontally */
-  gap: 2rem;               /* space between dog cards */
-  flex-wrap: nowrap;       /* prevent wrapping to next line */
+  justify-content: center;
+  gap: 1.5rem;       /* space between dog cards */
+  flex-wrap: nowrap;  /* keep cards on one row */
   margin-bottom: 2rem;
 }
 
-
-/* === Dog Cards === */
+/* === Dog Card === */
 .dog-card {
   background-color: #111;
   border-radius: 15px;
   padding: 1rem;
-  width: 300px;
+  width: 300px;               /* fixed width for uniform size */
   box-shadow: 0 0 15px rgba(33, 150, 243, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  margin: 0;                  /* no extra margin to avoid misalignment */
 }
 
 .dog-card:hover {
@@ -114,7 +113,7 @@ p {
   box-shadow: 0 0 25px #2196f3, 0 0 35px #2196f3;
 }
 
-/* === Responsive Layout === */
+/* Responsive */
 @media (max-width: 768px) {
   .dog-gallery {
     flex-direction: column;
