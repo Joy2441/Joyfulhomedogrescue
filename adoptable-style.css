@@ -1,17 +1,22 @@
-/* === Reset === */
+/* === Reset & Base === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === Body === */
 body {
   background-color: #000;
   color: #cfd8dc;
   font-family: 'Comic Neue', cursive, sans-serif;
   line-height: 1.6;
   padding: 2rem;
+}
+
+/* === Layout Container === */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -22,23 +27,35 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 /* === Paragraphs === */
 p {
   font-size: 1.1rem;
   color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Dog Gallery Grid === */
+.dog-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
-/* === Dog Gallery Layout === */
-.dog-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* === Individual Dog Cards === */
+/* === Dog Cards === */
 .dog-card {
   background-color: #111;
   border-radius: 15px;
@@ -54,11 +71,11 @@ p {
   box-shadow: 0 0 25px rgba(33, 150, 243, 0.6);
 }
 
-/* === Uniform Dog Images === */
+/* === Dog Image === */
 .dog-image {
   width: 100%;
-  height: 250px;            /* Fixed height */
-  object-fit: cover;        /* Keeps aspect ratio, fills space */
+  height: 250px;
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(33, 150, 243, 0.3);
   margin-bottom: 1rem;
@@ -68,6 +85,7 @@ p {
 .dog-card h2 {
   color: #42a5f5;
   margin: 0.5rem 0;
+  font-size: 1.4rem;
 }
 
 /* === Dog Description === */
@@ -76,7 +94,7 @@ p {
   color: #b0bec5;
 }
 
-/* === Back Button === */
+/* === Back to Home Button === */
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #2196f3, #1e88e5);
@@ -95,7 +113,7 @@ p {
   box-shadow: 0 0 25px #2196f3, 0 0 35px #2196f3;
 }
 
-/* === Responsive Design === */
+/* === Responsive Layout === */
 @media (max-width: 768px) {
   .dog-gallery {
     flex-direction: column;
@@ -105,4 +123,14 @@ p {
   .dog-card {
     width: 90%;
   }
+
+  .dog-image {
+    height: auto;
+  }
+
+  .btn {
+    width: 80%;
+    padding: 1rem;
+  }
 }
+
